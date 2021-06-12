@@ -8,7 +8,7 @@ using namespace std;
 
 
 int main() {
-    int ages[5];
+    int ages[5]; 
     cout<<"Please input the ages of all of the people in your group of 5: ";
     
     for (int i = 0; i < 5; ++i) {
@@ -23,26 +23,9 @@ int main() {
                 lowest = ages[i+1];
                 continue;
             }
-        }else{
-            if (ages[4] < lowest){
-                lowest = ages[4];
-                break;
-            }
         }
     }
+    cout << "The discounted price of the tickets is $" << 50 * (1 - (0.01 * lowest)) << endl;
     
-    double decrease = 0.01 * (100-lowest);
-    double discount = 50 * decrease;
-
-
-    cout<<"The price of the tickets is"<<discount<<endl;
-
-
-
-
-
-
-
-
     return 0;
 }
