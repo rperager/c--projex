@@ -44,7 +44,7 @@ class Queue {
 			queue[0] = item;
 			size++;
 		}else{
-			queue[size + 1] = item;
+			queue[size] = item;
 			size++;
 		}
 	}
