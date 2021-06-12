@@ -10,11 +10,13 @@ using namespace std;
 class Queue { 
 	int size; 
 	int* queue; //int pointer 
+	int maxSize;
 	
 	public:
 	Queue() {
 		size = 0;
 		queue = new int[100];
+		maxSize = 100;
 	}
 	void remove() { 
 		if (size == 0) { 
@@ -43,6 +45,14 @@ class Queue {
 	  	if(size == 0){ 
 			queue[0] = item;
 			size++;
+			
+		}else if(size == maxSize){
+			maxSize *= 2;
+			int* oldQueue = queue;
+			queue = new int[maxSize];
+			for(int i=0; i<size; i++){
+				queue[i] = oldQueue[i];	
+			}
 		}else{
 			queue[size] = item;
 			size++;
