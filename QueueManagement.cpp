@@ -40,8 +40,13 @@ class Queue {
 	}
 	
   void add(int item){
-		queue[size + 1] = item;
-		size++;
+	  	if(size == 0){ 
+			queue[0] = item;
+			size++;
+		}else{
+			queue[size + 1] = item;
+			size++;
+		}
 	}
 	
 }; 
