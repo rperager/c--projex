@@ -23,11 +23,6 @@ int main() {
                 lowest = ages[i+1];
                 continue;
             }
-        }else{
-            if (ages[4] < lowest){
-                lowest = ages[4];
-                break;
-            }
         }
     }
     
