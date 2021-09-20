@@ -1,38 +1,30 @@
 #include <iostream>
 using namespace std;
 
-// Write a function that returns true if a given number is a palindrome, and false, if it is not.
+// Write a function that returns true if a given string is a palindrome, and false, if it is not.
 
-bool isPalindrome(int x) {
-    std::string original = std::to_string(x);
-    string reversed = "";
+bool isPalindrome(string txt){
 
-    for(int i=original.length()-1; i>=0; i--){
-        reversed += original[i];
-    }  
-  
-    if(original == reversed){
-        return true;
-    }else{
-        return false;
+  int j = txt.length()-1;
+  for(int i=0; i!=j; i++){
+    if(txt[i] == txt[j]) j--;
+    else{
+      cout<<txt + " is NOT a palindrome!\n\n";
+      return false;
     }
-
-    return false;
+  }
+  cout<<txt + " IS a palindrome!\n\n";
+  return false;
 
 }
 
-int main() {
-    int n;
-    cout << "A palindrome is a number or word that is the same forwards as it is backwards.\n";
-    cout << "Please input a number to test if it is a palindrome: ";
-  
-    cin >>n;
-    
-    if(isPalindrome(n)) {
-        cout <<n<<" is a palindrome";
-    }
-    else {
-        cout << n<<" is NOT a palindrome";
-    }
-    return 0;
+int main(){
+  string input;
+  while(input != "break"){
+    cout<<"Enter a word to see if it is a palindrome: ";
+    cin>>input;
+    if(input == "break") break;
+    isPalindrome(input);
+  }
+
 }
